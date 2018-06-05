@@ -28,5 +28,5 @@ const coffeeSchema = mongoose.Schema({
   usePushEach: true,
 });
 
-// Mongoose wants to create a model out of a schema
+// Mongoose wants to create a components out of a schema
 export default mongoose.model('coffee', coffeeSchema);

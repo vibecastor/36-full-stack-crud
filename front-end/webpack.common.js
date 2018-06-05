@@ -20,7 +20,7 @@ webpackConfig.output = {
 
 webpackConfig.plugins = [
   new HtmlWebpackPlugin({
-    title: 'Mike Castor\'s 401d23 lab36 Full Stack Crud - Async Actions',
+    brand: 'Mike Castor\'s 401d23 lab36 Full Stack Crud - Async Actions',
   }),
   new DefinePlugin({
     API_URL: JSON.stringify(process.env.API_URL),

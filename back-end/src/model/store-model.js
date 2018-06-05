@@ -21,7 +21,7 @@ const storeSchema = mongoose.Schema({
   coffee: {
     type: mongoose.Schema.Types.ObjectId, // this is _id
     required: true,
-    ref: 'coffee', // string as exported from parent model.
+    ref: 'coffee', // string as exported from parent components.
   },
 });
 
