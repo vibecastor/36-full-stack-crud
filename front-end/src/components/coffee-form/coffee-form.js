@@ -2,7 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import autoBind from '../../utils';
 
-const defaultState = { brand: '', error: null };
+const defaultState = {
+  brand: '',
+  origin: '',
+  error: null,
+};
 
 export default class CoffeeForm extends React.Component {
   constructor(props) {
@@ -35,7 +39,7 @@ export default class CoffeeForm extends React.Component {
 
   handleChange(event) {
     event.preventDefault();
-    this.setState({ brand: event.target.value });
+    this.setState({ [event.target.value]: event.target.value });
   }
 
   render() {
@@ -49,6 +53,13 @@ export default class CoffeeForm extends React.Component {
           type="text"
           placeholder="Enter a coffee brand"
           value={this.state.brand}
+          onChange={this.handleChange}
+        />
+        <input
+          name="origin"
+          type="text"
+          placeholder="Enter a coffee origin"
+          value={this.state.origin}
           onChange={this.handleChange}
         />
         <button type="submit">{this.props.buttonText}</button>
