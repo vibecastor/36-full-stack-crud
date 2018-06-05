@@ -17,7 +17,7 @@ app.use(coffeeRouter);
 app.use(storeRouter);
 
 app.all('*', (request, response) => {
-  logger.log(logger.INFO, 'SERVER: Returning a 404 from the catch-all/default route');
+  logger.log(logger.INFO, 'SERVER: Returning a 404 from the catch-all/default reducer');
   return response.sendStatus(404);
 });
 // (3) Mike: this runs when .next in cofferRouter

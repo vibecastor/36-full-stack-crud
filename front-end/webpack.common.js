@@ -6,7 +6,7 @@ const { DefinePlugin } = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssPlugin = require('mini-css-extract-plugin');
 
-const production = process.env.NODE_ENV === 'production';
+const production = process.env.NODE_ENV === 'production'; // ?
 
 const webpackConfig = module.exports = {};
 
@@ -20,22 +20,22 @@ webpackConfig.output = {
 
 webpackConfig.plugins = [
   new HtmlWebpackPlugin({
-    title: 'Mike Castor\'s 401d23 lab36 Full Stack Crud - Async Actions',
+    brand: 'Mike Castor\'s 401d23 lab36 Full Stack Crud - Async Actions',
   }),
   new DefinePlugin({
     API_URL: JSON.stringify(process.env.API_URL),
   }),
-  ];
+];
 
-  if (production) {
-    webpackConfig.plugins.push(new MiniCssPlugin({
-      filename: '[name].[hash].css',
-    }));
-  }
+if (production) {
+  webpackConfig.plugins.push(new MiniCssPlugin({
+    filename: '[name].[hash].css',
+  }));
+}
 
 webpackConfig.module = {};
 
-  const finalLoader = production ? MiniCssPlugin.loader : 'style-loader';
+const finalLoader = production ? MiniCssPlugin.loader : 'style-loader';
 
 webpackConfig.module.rules = [
   {

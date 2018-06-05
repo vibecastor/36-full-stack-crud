@@ -32,7 +32,7 @@ coffeeRouter.post('/api/coffee', jsonParser, (request, response, next) => {
 });
 
 coffeeRouter.put('/api/coffee/:id', jsonParser, (request, response, next) => {
-  // console.log('inside the put route');
+  // console.log('inside the put reducer');
   const options = { runValidators: true, new: true }; // makes sure we honor the schema properties.
   return Coffee.findByIdAndUpdate(request.params.id, request.body, options)
     .then((updatedCoffee) => {
